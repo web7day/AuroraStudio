@@ -8,9 +8,7 @@ function Hero() {
             <p className="hero-eyebrow">Celtniecība · Renovācija · Rīga</p>
   
             <h1>
-              Būvējam kvalitāti,
-              <br />
-              kas kalpo gadiem.
+              Būvējam kvalitāti, kas kalpo gadiem.
             </h1>
   
             <p className="hero-description">
