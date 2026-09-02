@@ -1,6 +1,6 @@
 function CTA() {
     return (
-      <section className="cta">
+      <section className="cta" id="contact">
         <div className="cta-container">
           <div className="cta-intro">
             <p className="section-eyebrow">Sāksim projektu</p>
