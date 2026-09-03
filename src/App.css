@@ -1225,13 +1225,18 @@
   margin-top: 45px;
   padding: 18px 24px;
 
+  border: 0;
   background: #e9783d;
   color: #ffffff;
 
+  font-family: inherit;
   font-size: 0.8rem;
   font-weight: 700;
+  line-height: inherit;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  cursor: pointer;
+  appearance: none;
 
   transition:
     background 0.3s ease,

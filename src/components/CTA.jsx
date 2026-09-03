@@ -1,4 +1,8 @@
 function CTA() {
+    const handleSubmit = (event) => {
+      event.preventDefault()
+    }
+
     return (
       <section className="cta" id="contact">
         <div className="cta-container">
@@ -13,10 +17,12 @@ function CTA() {
                 iespējas un nākamos soļus.
               </p>
   
-              <a href="#contact" className="cta-button">
-                Pieprasīt tāmi
-                <span>→</span>
-              </a>
+              <form id="contact-form" onSubmit={handleSubmit} noValidate>
+                <button type="submit" className="cta-button">
+                  Pieprasīt tāmi
+                  <span>→</span>
+                </button>
+              </form>
             </div>
           </div>
   

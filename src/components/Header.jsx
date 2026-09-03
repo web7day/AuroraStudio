@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const headerRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,18 +17,54 @@ function Header() {
     }
   }, [])
 
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+      }
+    }
+
+    const handlePointerDown = (event) => {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        setMenuOpen(false)
+      }
+    }
+
+    const handleResize = () => {
+      if (!window.matchMedia('(max-width: 900px)').matches) {
+        setMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    document.addEventListener('pointerdown', handlePointerDown)
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.removeEventListener('pointerdown', handlePointerDown)
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [menuOpen])
+
   const closeMenu = () => {
     setMenuOpen(false)
   }
 
   return (
-    <header className={`site-header ${menuOpen ? 'menu-open' : ''} ${scrolled ? 'is-scrolled' : ''}`}>
+<header
+  ref={headerRef}
+  className={`site-header ${menuOpen ? 'menu-open' : ''} ${scrolled ? 'is-scrolled' : ''}`}
+>
       <div className="header-container">
         <a href="/" className="logo" onClick={closeMenu}>
           NORDBUILD
         </a>
 
         <nav
+          id="primary-navigation"
           className={`main-nav ${menuOpen ? 'is-open' : ''}`}
           aria-label="Galvenā navigācija"
         >
@@ -50,6 +87,7 @@ function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Aizvērt izvēlni' : 'Atvērt izvēlni'}
           aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
         >
           <span></span>
           <span></span>

@@ -12,7 +12,7 @@ import './App.css'
 
 function App() {
   return (
-    <>
+    <div id="top">
       <Header />
 
       <main>
@@ -25,8 +25,9 @@ function App() {
         <Testimonials />
         <CTA />
       </main>
+
       <Footer />
-      </>
+    </div>
   )
 }
 
