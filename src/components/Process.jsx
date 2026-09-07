@@ -1,49 +1,23 @@
-const processSteps = [
-    {
-      number: '01',
-      title: 'Konsultācija',
-      description:
-        'Uzklausām ieceri, izrunājam vajadzības un vienojamies par projekta mērķiem.',
-    },
-    {
-      number: '02',
-      title: 'Plānošana',
-      description:
-        'Izstrādājam darbu plānu, sagatavojam tāmi un saskaņojam projekta norisi.',
-    },
-    {
-      number: '03',
-      title: 'Realizācija',
-      description:
-        'Veicam būvniecības un renovācijas darbus, rūpējoties par kvalitāti katrā posmā.',
-    },
-    {
-      number: '04',
-      title: 'Nodošana',
-      description:
-        'Pabeidzam darbus, pārbaudām rezultātu un nododam projektu gatavu lietošanai.',
-    },
-  ]
-  
-  function Process() {
+import { site } from '../data/site'
+
+function Process() {
     return (
       <section className="process" id="process">
         <div className="process-container">
           <div className="process-intro">
-            <p className="section-eyebrow">Mūsu process</p>
+            <p className="section-eyebrow">{site.process.eyebrow}</p>
   
             <div>
-              <h2>No pirmās sarunas līdz gatavam rezultātam.</h2>
+              <h2>{site.process.title}</h2>
   
               <p className="section-description">
-                Skaidrs process palīdz izvairīties no pārsteigumiem un nodrošina,
-                ka katrs projekta posms virzās uz kopīgu rezultātu.
+                {site.process.description}
               </p>
             </div>
           </div>
   
           <div className="process-steps">
-            {processSteps.map((step) => (
+            {site.process.items.map((step) => (
               <article className="process-step" key={step.number}>
                 <span className="process-number">{step.number}</span>
   
