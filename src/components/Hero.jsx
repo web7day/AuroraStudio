@@ -1,7 +1,7 @@
 function Hero() {
     return (
       <section className="hero">
-        <div className="hero-overlay" />
+        <div className="hero-overlay" aria-hidden="true" />
   
         <div className="hero-container">
           <div className="hero-content">
@@ -18,7 +18,7 @@ function Hero() {
   
             <div className="hero-actions">
               <a href="#contact" className="button button-primary">
-                Pieprasīt tāmi <span>→</span>
+                Pieprasīt tāmi <span aria-hidden="true">→</span>
               </a>
   
               <a href="#projects" className="button button-secondary">

@@ -20,7 +20,7 @@ function CTA() {
               <form id="contact-form" onSubmit={handleSubmit} noValidate>
                 <button type="submit" className="cta-button">
                   Pieprasīt tāmi
-                  <span>→</span>
+                  <span aria-hidden="true">→</span>
                 </button>
               </form>
             </div>

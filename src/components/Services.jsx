@@ -64,7 +64,7 @@ const services = [
                   <p>{service.description}</p>
                 </div>
   
-                <span className="service-arrow">↗</span>
+                <span className="service-arrow" aria-hidden="true">↗</span>
               </article>
             ))}
           </div>

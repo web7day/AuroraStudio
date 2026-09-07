@@ -46,7 +46,10 @@ const projects = [
             {projects.map((project) => (
               <article className="project-card" key={project.number}>
                 <div className="project-image">
-                  <img src={project.image} alt={project.title} />
+                  <img
+                    src={project.image}
+                    alt={`${project.title}, ${project.location}`}
+                  />
                 </div>
   
                 <div className="project-info">

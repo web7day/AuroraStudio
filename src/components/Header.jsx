@@ -79,18 +79,19 @@ function Header() {
           className="header-cta"
           onClick={closeMenu}
         >
-          Pieprasīt tāmi <span>→</span>
+          Pieprasīt tāmi <span aria-hidden="true">→</span>
         </a>
 
         <button
+          type="button"
           className={`menu-toggle ${menuOpen ? 'is-open' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Aizvērt izvēlni' : 'Atvērt izvēlni'}
           aria-expanded={menuOpen}
           aria-controls="primary-navigation"
         >
-          <span></span>
-          <span></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
       </div>
     </header>

@@ -13,9 +13,13 @@ import './App.css'
 function App() {
   return (
     <div id="top">
+      <a href="#main-content" className="skip-link">
+        Pāriet uz galveno saturu
+      </a>
+
       <Header />
 
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <Services />
         <About />
