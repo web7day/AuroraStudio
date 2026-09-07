@@ -3,7 +3,7 @@ function Testimonials() {
       <section className="testimonials">
         <div className="testimonials-container">
           <div className="testimonials-intro">
-            <p className="section-eyebrow">Mūsu klienti</p>
+            <h2 className="section-eyebrow">Mūsu klienti</h2>
           </div>
   
           <div className="testimonial">

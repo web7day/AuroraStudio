@@ -22,7 +22,7 @@ const statistics = [
       <section className="statistics">
         <div className="statistics-container">
           <div className="statistics-intro">
-            <p className="section-eyebrow">Mūsu pieredze</p>
+            <h2 className="section-eyebrow">Mūsu pieredze</h2>
           </div>
   
           <div className="statistics-list">

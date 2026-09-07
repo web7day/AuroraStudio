@@ -34,3 +34,16 @@ button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
+
+a:focus,
+button:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--color-dark),
+    0 0 0 4px var(--color-accent);
+}
