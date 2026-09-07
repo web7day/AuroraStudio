@@ -49,6 +49,8 @@ const projects = [
                   <img
                     src={project.image}
                     alt={`${project.title}, ${project.location}`}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
   

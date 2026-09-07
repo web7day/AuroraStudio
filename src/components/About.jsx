@@ -6,6 +6,8 @@ function About() {
             <img
               src="/images/about.jpg"
               alt="NordBuild būvniecības projekts"
+              loading="lazy"
+              decoding="async"
             />
           </div>
   
