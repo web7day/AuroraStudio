@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { site } from '../data/site'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -61,33 +62,34 @@ function Header() {
 >
       <div className="header-container">
         <a href="/" className="logo" onClick={closeMenu}>
-          NORDBUILD
+          {site.brand.logo}
         </a>
 
         <nav
           id="primary-navigation"
           className={`main-nav ${menuOpen ? 'is-open' : ''}`}
-          aria-label="Galvenā navigācija"
+          aria-label={site.ui.navLabel}
         >
-          <a href="#services" onClick={closeMenu}>Pakalpojumi</a>
-          <a href="#projects" onClick={closeMenu}>Projekti</a>
-          <a href="#about" onClick={closeMenu}>Par mums</a>
-          <a href="#contact" onClick={closeMenu}>Kontakti</a>
+          {site.nav.map((item) => (
+            <a key={item.href} href={item.href} onClick={closeMenu}>
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         <a
-          href="#contact"
+          href={site.header.cta.href}
           className="header-cta"
           onClick={closeMenu}
         >
-          Pieprasīt tāmi <span aria-hidden="true">→</span>
+          {site.header.cta.label} <span aria-hidden="true">→</span>
         </a>
 
         <button
           type="button"
           className={`menu-toggle ${menuOpen ? 'is-open' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Aizvērt izvēlni' : 'Atvērt izvēlni'}
+          aria-label={menuOpen ? site.ui.menuClose : site.ui.menuOpen}
           aria-expanded={menuOpen}
           aria-controls="primary-navigation"
         >
