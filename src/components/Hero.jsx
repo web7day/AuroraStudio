@@ -1,3 +1,5 @@
+import { site } from '../data/site'
+
 function Hero() {
     return (
       <section className="hero">
@@ -5,43 +7,42 @@ function Hero() {
   
         <div className="hero-container">
           <div className="hero-content">
-            <p className="hero-eyebrow">Celtniecība · Renovācija · Rīga</p>
+            <p className="hero-eyebrow">{site.hero.eyebrow}</p>
   
             <h1>
-              Būvējam kvalitāti, kas kalpo gadiem.
+              {site.hero.title}
             </h1>
   
             <p className="hero-description">
-              Celtniecība, renovācija un pilna cikla būvniecības risinājumi
-              Rīgā un tās apkārtnē.
+              {site.hero.description}
             </p>
   
             <div className="hero-actions">
-              <a href="#contact" className="button button-primary">
-                Pieprasīt tāmi <span aria-hidden="true">→</span>
-              </a>
-  
-              <a href="#projects" className="button button-secondary">
-                Apskatīt projektus
-              </a>
+              {site.hero.actions.map((action, index) => (
+                <a
+                  key={action.href}
+                  href={action.href}
+                  className={`button ${index === 0 ? 'button-primary' : 'button-secondary'}`}
+                >
+                  {action.label}
+                  {index === 0 ? (
+                    <>
+                      {' '}
+                      <span aria-hidden="true">→</span>
+                    </>
+                  ) : null}
+                </a>
+              ))}
             </div>
           </div>
   
           <div className="hero-stats">
-            <div className="hero-stat">
-              <strong>10+</strong>
-              <span>gadi pieredzes</span>
-            </div>
-  
-            <div className="hero-stat">
-              <strong>100+</strong>
-              <span>pabeigti projekti</span>
-            </div>
-  
-            <div className="hero-stat">
-              <strong>5★</strong>
-              <span>klientu vērtējums</span>
-            </div>
+            {site.hero.stats.map((stat) => (
+              <div className="hero-stat" key={stat.label}>
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
