@@ -1,26 +1,26 @@
+import { site } from '../data/site'
+
 function Testimonials() {
     return (
       <section className="testimonials">
         <div className="testimonials-container">
           <div className="testimonials-intro">
-            <h2 className="section-eyebrow">Mūsu klienti</h2>
+            <h2 className="section-eyebrow">{site.testimonial.eyebrow}</h2>
           </div>
   
           <div className="testimonial">
             <blockquote>
-              “NordBuild komanda visu procesu padarīja vienkāršu un
-              saprotamu. Darbi tika paveikti kvalitatīvi un norunātajos
-              termiņos.”
+              {site.testimonial.quote}
             </blockquote>
   
             <div className="testimonial-author">
-              <strong>Jānis Bērziņš</strong>
-              <span>Privātmājas īpašnieks · Mārupe</span>
+              <strong>{site.testimonial.author}</strong>
+              <span>{site.testimonial.role}</span>
             </div>
   
             <div className="testimonial-project">
-              <span>Privātmāju būvniecība</span>
-              <span>2026</span>
+              <span>{site.testimonial.category}</span>
+              <span>{site.testimonial.year}</span>
             </div>
           </div>
         </div>
