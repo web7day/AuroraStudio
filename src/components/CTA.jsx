@@ -1,3 +1,5 @@
+import { site } from '../data/site'
+
 function CTA() {
     const handleSubmit = (event) => {
       event.preventDefault()
@@ -7,19 +9,18 @@ function CTA() {
       <section className="cta" id="contact">
         <div className="cta-container">
           <div className="cta-intro">
-            <p className="section-eyebrow">Sāksim projektu</p>
+            <p className="section-eyebrow">{site.cta.eyebrow}</p>
   
             <div>
-              <h2>Ir projekts? Parunāsim.</h2>
+              <h2>{site.cta.title}</h2>
   
               <p className="cta-description">
-                Pastāstiet mums par savu ieceri. Izrunāsim vajadzības,
-                iespējas un nākamos soļus.
+                {site.cta.description}
               </p>
   
               <form id="contact-form" onSubmit={handleSubmit} noValidate>
                 <button type="submit" className="cta-button">
-                  Pieprasīt tāmi
+                  {site.cta.buttonLabel}
                   <span aria-hidden="true">→</span>
                 </button>
               </form>
@@ -27,8 +28,8 @@ function CTA() {
           </div>
   
           <div className="cta-bottom">
-            <span>Rīga · Latvija</span>
-            <span>NordBuild</span>
+            <span>{site.cta.metaLeft}</span>
+            <span>{site.cta.metaRight}</span>
           </div>
         </div>
       </section>
