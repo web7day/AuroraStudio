@@ -1,9 +1,12 @@
 :root {
-  --color-dark: #171817;
-  --color-light: #f4f2ed;
-  --color-grey: #a7a59f;
-  --color-accent: #d97745;
+  --color-dark: #1c2f28;
+  --color-light: #f4efe6;
+  --color-grey: #5c6058;
+  --color-accent: #8f6b32;
   --color-white: #ffffff;
+  --color-border: #ddd6c8;
+  --color-muted: #656960;
+  --color-on-dark: #c4c6bf;
 }
 
 * {
@@ -14,6 +17,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+html.menu-lock,
+html.menu-lock body {
+  overflow: hidden;
 }
 
 body {
@@ -40,10 +48,9 @@ button:focus {
 
 a:focus-visible,
 button:focus-visible {
-  outline: none;
-  box-shadow:
-    0 0 0 2px var(--color-dark),
-    0 0 0 4px var(--color-accent);
+  outline: 2px solid var(--color-white);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px var(--color-dark);
 }
 
 .skip-link {

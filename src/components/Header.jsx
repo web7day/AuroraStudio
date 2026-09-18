@@ -40,11 +40,14 @@ function Header() {
       }
     }
 
+    document.documentElement.classList.add('menu-lock')
+
     document.addEventListener('keydown', handleKeyDown)
     document.addEventListener('pointerdown', handlePointerDown)
     window.addEventListener('resize', handleResize)
 
     return () => {
+      document.documentElement.classList.remove('menu-lock')
       document.removeEventListener('keydown', handleKeyDown)
       document.removeEventListener('pointerdown', handlePointerDown)
       window.removeEventListener('resize', handleResize)
